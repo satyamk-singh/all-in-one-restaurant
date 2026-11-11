@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All in One Restaurant – Hussainabad, Palamu</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body class="intro">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 120 120"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc62e"/><stop offset="1" stop-color="#e8392e"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="#161616" stroke="url(#lg)" stroke-width="5"/><circle cx="60" cy="60" r="40" fill="none" stroke="#f5f1e8" stroke-width="2" stroke-dasharray="3 5"/><path d="M30 28v20q0 7 7 7v37M37 28v20M44 28v20q0 7-7 7" stroke="#f5f1e8" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M90 28q-9 7-9 24 0 5 9 5v35" stroke="#f5f1e8" stroke-width="3.5" fill="none" stroke-linecap="round"/><text x="60" y="76" text-anchor="middle" font-family="Bebas Neue,Impact,sans-serif" font-size="56" fill="url(#lg)">1</text></symbol></svg>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<header id="top"><a href="#home" class="brand"><svg><use href="#logo"/></svg><span>All in One</span></a>
+<nav><a href="#home" data-n="home">Home</a><a href="#menu" data-n="menu">Menu</a><a href="#dine" data-n="dine">Book table</a><a href="#about" data-n="about">About</a><a href="#admin" data-n="admin" id="adm" style="display:none">⚙ Owner</a><a href="#contact" data-n="contact">Contact</a><a href="#delivery" data-n="delivery" class="cartb">🛵 Delivery <span id="cc">0</span></a></nav></header>
+
+<section class="page on" id="p-welcome">
+<svg width="110" height="110"><use href="#logo"/></svg>
+<p class="mute" style="margin:6px 0">Welcome to</p>
+<h1>All in One <span class="red">Restaurant</span></h1>
+<p class="mute">Hussainabad, Palamu · Parathas, Kulche, Pizza, Tikka &amp; Desserts</p>
+<button class="btn r" id="enter" style="font-size:20px;padding:16px 40px">Enter the restaurant</button>
+</section>
+
+<section class="page" id="p-home">
+<div class="hero"><h1>Everything you crave.<br><span class="gold">One table.</span></h1>
+<p>Stuffed parathas, kulche choley, 8-inch pizzas, smoky tikka and warm desi desserts. Dine in at Hussainabad or get it delivered home.</p>
+<div class="row"><a class="btn r" href="#dine">Book a table</a><a class="btn" href="#delivery">Order online</a><a class="btn o" href="#menu">View full menu</a></div>
+<div class="chips"><span class="chip">🛵 Free delivery above ₹399</span><span class="chip">🎟️ Use code ALL10 for 10% off</span><span class="chip">🌱 Veg &amp; non-veg</span><span class="chip">👶 Kids menu</span></div></div>
+<div class="cta"><a class="box" href="#dine"><h3>🍽️ Dine in</h3><p class="mute">Reserve a table for your family or group. Pick the time and the exact table.</p><span class="btn r">Book a table</span></a><a class="box" href="#delivery"><h3>🛵 Home delivery</h3><p class="mute">Choose your area and see which dishes we deliver to your address.</p><span class="btn">Order online</span></a></div><h2>Best sellers <span class="mute" style="font-size:.5em">(tap a dish!)</span></h2>
+<div class="grid" id="best"></div>
+</section>
+
+<section class="page" id="p-menu"><h2>Our <span class="red">Menu</span></h2><p class="mute">Prices in ₹. Tap any dish photo for a surprise.</p>
+<div class="bar"><input id="q" placeholder="Search dishes…" aria-label="Search dishes"><button class="tg" id="vg">🌱 Veg only</button><span id="chips" class="row"></span></div>
+<div id="menu"></div></section>
+
+<section class="page" id="p-dine"><h2>Book a <span class="red">Table</span></h2><p class="mute">Dine in at Hussainabad. Pick a date, time and table. We confirm on WhatsApp.</p>
+<div class="two"><div class="box"><form id="tf"><input required id="tn" placeholder="Your name"><input required id="tp" type="tel" placeholder="Phone number"><div class="row"><input required id="td" type="date" style="flex:1" aria-label="Date"><select id="tg" style="flex:1" aria-label="Guests"></select></div><div><b>Time</b><div class="row" id="slots" style="margin-top:8px"></div></div><div><b>Choose your table</b> <span class="mute" id="thint"></span><div id="tables"></div></div><button class="btn r" type="submit">Request table</button></form><div id="bk"></div></div>
+<div class="box"><h3>Available in the restaurant</h3><p class="mute">The full menu is served at your table. These specials are dine-in only:</p><div id="dinelist"></div><a class="btn" href="#menu">See full menu</a></div></div></section>
+<section class="page" id="p-delivery"><h2>Online <span class="red">Delivery</span></h2><p class="mute">Cash or UPI on delivery. What we deliver depends on your area.</p>
+<div class="box" style="margin-bottom:26px"><h3>Track your order</h3><div class="row" style="margin-top:10px"><input id="tkid" placeholder="Order ID, e.g. O-1A2B3" style="max-width:260px" aria-label="Order ID"><button class="btn" id="tkgo" type="button">Track</button></div><p id="tkres" class="mute"></p></div><div class="box"><h3>1. Choose your delivery area</h3><select id="zn" aria-label="Delivery area" style="margin-top:10px"></select><div id="zinfo"></div></div>
+<div class="two" style="margin-top:26px"><div><h3>2. Available at your address <span class="mute" id="zcount"></span></h3><div class="dm" id="dmenu"></div></div>
+<div class="box sticky"><h3>3. Your cart</h3><div id="cart"></div>
+<form id="of"><input required id="nm" placeholder="Your name" autocomplete="name"><input required id="ph" type="tel" placeholder="Phone number" autocomplete="tel"><textarea required id="ad" rows="2" placeholder="Full delivery address"></textarea><select id="pay"><option>Cash on delivery</option><option>UPI on delivery</option></select><input id="cp" placeholder="Coupon code (try ALL10)"><div class="sum" id="sum"></div><button class="btn r" type="submit">Place order on WhatsApp</button></form>
+<div id="ores"></div><div class="steps" id="steps"><span>Order placed</span><span>Cooking</span><span>On the way</span><span>Delivered</span></div></div></div></section>
+<section class="page" id="p-admin"><h2>Owner <span class="red">Dashboard</span></h2><p class="mute">Live orders and table bookings. Visible only to the owner and editors.</p><h3>Orders</h3><div id="aord"></div><h3 style="margin-top:30px">Table bookings</h3><div id="abk"></div><h3 style="margin-top:30px">Sold-out switches <span class="mute" style="font-size:.6em">(tap to mark a dish sold out)</span></h3><div class="row" id="aso" style="margin-top:10px"></div></section>
+<section class="page" id="p-about"><h2>About <span class="red">us</span></h2>
+<div class="two"><div class="box"><p style="font-size:18px">All in One Restaurant is a family-run kitchen in Hussainabad, Palamu, owned by <b class="gold">Satyam Singh</b>. The idea is simple: one place where everyone at the table finds something they love, from a hot aloo paratha at breakfast to tandoori chicken at night and jalebi with rabri after.</p><p class="mute">Everything is cooked fresh to order. Pizzas are made with desi flavours, tikkas come off the clay oven, and the kids menu has its own little box.</p></div>
+<div class="box" style="text-align:center"><svg width="170" height="170"><use href="#logo"/></svg><h3 style="margin-top:10px">All in One Restaurant</h3><p class="mute">Owner: Satyam Singh</p></div></div>
+<div class="chips"><span class="chip">🍽️ 40+ dishes</span><span class="chip">🔥 Clay-oven tikka</span><span class="chip">🍕 8" pizzas</span><span class="chip">🍮 Desi desserts</span></div></section>
+
+<section class="page" id="p-contact"><h2>Visit <span class="red">us</span></h2>
+<div class="two"><div class="box"><h3>Address</h3><p style="font-size:18px">All in One Restaurant<br>Near SBI Bank, Hussainabad<br>Palamu, Jharkhand 822116</p><p class="mute">Owner: Satyam Singh</p>
+<div class="row"><a class="btn r" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=SBI+Bank+Hussainabad+Palamu+Jharkhand+822116">Open in Google Maps</a><a class="btn" id="wa" target="_blank" rel="noopener" href="#">Chat on WhatsApp</a><a class="btn o" id="call" href="#">Call us</a></div></div>
+<div class="box"><h3>Quick order</h3><p class="mute">Want it at home? Add dishes from the menu and check out in a minute.</p><div class="row"><a class="btn" href="#menu">Pick dishes</a><a class="btn r" href="#delivery">Go to delivery</a></div></div></div></section>
+
+<footer>© All in One Restaurant · Near SBI Bank, Hussainabad, Palamu, Jharkhand 822116 · Owner: Satyam Singh</footer>
+<div id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script></body></html>
